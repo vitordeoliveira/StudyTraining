@@ -1,21 +1,20 @@
 import * as React from "react";
+
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
-import Main from "./pages/Main";
+import Training from "./pages/Training";
+import Atividades from "./pages/Atividades";
 
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Main"
-          component={Main}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
+      <Drawer.Navigator initialRouteName="Estudar">
+        <Drawer.Screen name="TRAINING" component={Training} />
+        <Drawer.Screen name="ATIVIDADES" component={Atividades} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
